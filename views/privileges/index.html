@@ -1,0 +1,38 @@
+<div class="layui-card">
+    <div class="layui-card-header">权限管理<small>><% .data.MenuName %></small></div>
+    <div class="layui-card-body">
+        <table class="layui-table" lay-data="{url:'/privileges/index/<% .data.MenuId %>', page:true, id:'table', method:'post', toolbar:'#hBtn'}" lay-filter="table">
+            <thead>
+              <tr>
+                <th lay-data="{field:'Id', sort: true}">ID</th>
+                <th lay-data="{field:'PrivilegeName'}">名称</th>
+                <th lay-data="{field:'PrivilegeCode'}">权限码</th>
+                <th lay-data="{field:'IsMenuPrivilege', templet: '#isMenu'}">菜单</th>
+                <th lay-data="{field:'PrivilegeUrl' }">资源</th>
+                <th lay-data="{field:'OtherPrivilegeUrl' }">关联资源</th>
+                <th lay-data="{field:'Opt', fixed: 'right', toolbar: '#toolbar'}">操作</th>
+              </tr>
+            </thead>
+          </table>
+    </div>
+  </div>
+<script type="text/html" id="hBtn">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" data-mid="<%.data.MenuId%>" id="add" lay-event="add">添加</button>
+    </div>
+</script>
+<script type="text/html" id="toolbar">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<script type="text/html" id="isMenu">
+{{# if (d.IsMenuPrivilege == 1) { }}
+        是
+{{# } else { }}
+        否
+{{# } }}
+</script>
+  
+<script src="/static/js/privileges.js"></script> 
+   

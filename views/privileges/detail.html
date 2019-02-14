@@ -1,0 +1,47 @@
+
+<div class="layui-card">
+            <div class="layui-card-body">
+                    <form class="layui-form layui-form-pane" action="">
+                        <input type="hidden" name="id" value="<%.data.Id%>">
+                        <div class="layui-form-item">
+                              <label class="layui-form-label">名称</label>
+                              <div class="layui-input-inline">
+                                <input type="text" name="name" lay-verify="required" autocomplete="off" value="<%.data.PrivilegeName%>" placeholder="请输入名称" class="layui-input">
+                              </div>
+                            </div>
+                            <div class="layui-form-item">
+                              <label class="layui-form-label">权限代码</label>
+                              <div class="layui-input-inline">
+                                <input type="text" name="code" value="<%.data.PrivilegeCode%>" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                              </div>
+                            </div>
+                            
+                            <div class="layui-form-item" pane="">
+                                <label class="layui-form-label">菜单权限</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="is-menu" value="1" title="是" <%if eq 1 .data.IsMenuPrivilege %> checked <%end%>>
+                                    <input type="radio" name="is-menu" value="0" title="否" <%if eq 0 .data.IsMenuPrivilege %> checked <%end%>>
+                                </div>
+                            </div>
+                           
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">权限资源</label>
+                                <div class="layui-input-inline">
+                                <input type="text" name="url" value="<%.data.PrivilegeUrl%>" placeholder="请输入" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                           
+                            <div class="layui-form-item layui-form-text">
+                              <label class="layui-form-label">关联资源</label>
+                              <div class="layui-input-block">
+                                <textarea placeholder="以,分开" name="other-url" class="layui-textarea"><%.data.OtherPrivilegeUrl%></textarea>
+                              </div>
+                            </div>
+                            <div class="layui-form-item">
+                              <button class="layui-btn" lay-submit="" lay-filter="save">提交</button>
+                            </div>
+                          </form>               
+            </div>
+</div>
+
+<script src="/static/js/privileges.js"></script> 

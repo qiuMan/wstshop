@@ -1,0 +1,35 @@
+<style>
+    .dHead {
+        height:85px;
+        width:100%;
+        position: fixed;
+        z-index:5;
+        top:0;
+        overflow-x: auto;
+        padding: 10px;
+    }
+    .dBody {
+        width:100%;
+        overflow:auto;
+        top:50px;
+        position:absolute;
+        z-index:10;
+        bottom:5px;
+    }
+    .layui-btn-xstree {
+        height: 35px;
+        line-height: 35px;
+        padding: 0px 5px;
+        font-size: 12px;
+    }
+</style>
+<div class="layui-card">
+        <div class="layui-card-header">菜单管理</div>
+</div>
+<div style="height: 100%">
+    <div class="dBody">
+        <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
+    </div>
+</div>
+
+<script src="/static/js/menus.js"></script>
